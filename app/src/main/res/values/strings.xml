@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Api Movies Database</string>
+    <string name="action_settings">Configuración</string>
+    <string name="action_Popular">Populares</string>
+    <string name="action_Top_Rated">Top Rated</string>
+    <string name="action_Upcoming">Próximamente</string>
+</resources>

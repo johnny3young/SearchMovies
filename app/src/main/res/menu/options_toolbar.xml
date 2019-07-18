@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    //Se adicionan el menu en el Menu Overflow
+    <item android:id="@+id/action_Popular"
+          android:title="@string/action_Popular"
+          app:showAsAction="never"/>
+    <item android:id="@+id/action_Top_Rated"
+          android:title="@string/action_Top_Rated"
+          app:showAsAction="never"/>
+    <item android:id="@+id/action_Upcoming"
+          android:title="@string/action_Upcoming"
+          app:showAsAction="never"/>
+
+</menu>

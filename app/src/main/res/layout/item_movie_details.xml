@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:padding="0dp"
+        android:layout_margin="10dp"
+        android:layout_height="match_parent">
+
+    <ImageView
+            android:layout_width="350dp"
+            android:layout_height="400dp"
+            app:srcCompat="@android:drawable/btn_star_big_on"
+            android:id="@+id/ivMovieDetails"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/textViewOverview"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintVertical_bias="0.02"/>
+
+    <TextView
+            android:text="Overview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView5"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/textView"/>
+
+    <TextView
+            android:text="Popularity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView4"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/textView3"/>
+
+    <TextView
+            android:text="Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView3"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+            android:id="@+id/textViewVote_count"
+            android:hint="vote_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@+id/textView"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/textViewPopularity"
+            />
+
+    <TextView
+            android:id="@+id/textViewTitle"
+            android:hint="Title"
+            android:inputType="textMultiLine"
+            android:minLines="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@+id/textView3"
+            android:layout_marginStart="48dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintHorizontal_bias="0.044"/>
+
+    <TextView
+            android:id="@+id/textViewPopularity"
+            android:hint="popularity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@+id/textView4"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/textViewTitle"/>
+
+    <TextView
+            android:id="@+id/textViewOverview"
+            android:hint="overview"
+            android:layout_width="280dp"
+            android:layout_height="81dp"
+            android:layout_alignParentEnd="true"
+            android:inputType="textMultiLine"
+            android:padding=""
+            android:minLines="3"
+            android:textAlignment="inherit"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/textViewVote_count"
+            app:layout_constraintStart_toEndOf="@+id/textView5"
+            android:layout_marginStart="28dp"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.2"/>
+
+    <TextView
+            android:text="Vote Count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/textView4"/>
+
+</android.support.constraint.ConstraintLayout>

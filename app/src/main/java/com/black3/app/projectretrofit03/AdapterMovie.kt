@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
+import android.view.animation.Transformation
 import com.squareup.picasso.Picasso
 import com.black3.app.projectretrofit03.Model.Movie
 import kotlinx.android.synthetic.main.item_movie.view.*
@@ -29,13 +30,7 @@ class AdapterMovie (val movies : MutableList<Movie>) : RecyclerView.Adapter <Ada
         val fechaFormat  = SimpleDateFormat("yyyy-MM-dd")
         holder.release_date.text = fechaFormat.format(movies[position].release_date)
 
-        if (movies[position].adult.toString() == "false"){
-            holder.adult.text = "No"
-        }else{
-            holder.adult.text = "Yes"
-        }
-
-        Picasso.get().load("https://image.tmdb.org/t/p/w500/${movies[position].poster_path}").into(holder.imageView)
+        Picasso.get().load("https://image.tmdb.org/t/p/w500/${movies[position].poster_path}").transform(CircleTransformation()).into(holder.imageView)
 
         holder.itemView.ivMovie.setOnClickListener{
             val z = Intent(holder.itemView.context,ImagenActivity::class.java)
@@ -65,7 +60,6 @@ class AdapterMovie (val movies : MutableList<Movie>) : RecyclerView.Adapter <Ada
         val vote_average = itemView.textViewVote_Average
         val title = itemView.textViewTitle
         val release_date = itemView.textViewRelease_Date
-        val adult = itemView.textViewAdult
         val imageView = itemView.ivMovie
     }
 }

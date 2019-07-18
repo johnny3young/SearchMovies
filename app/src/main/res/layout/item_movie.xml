@@ -20,79 +20,61 @@
 
             <ImageView
                     android:foreground="?android:attr/selectableItemBackground"
-                    android:layout_width="200dp"
+                    android:layout_width="74dp"
                     android:layout_marginBottom="5dp"
-                    android:layout_height="250dp"
+                    android:layout_height="53dp"
                     android:scaleType="fitXY"
                     app:srcCompat="@android:drawable/btn_star_big_on"
                     android:id="@+id/ivMovie"
                     android:focusable="true"
                     android:clickable="true"
                     android:layout_alignParentTop="true"
-                    android:layout_marginTop="8dp" android:layout_alignParentEnd="true"
-                    android:layout_marginEnd="15dp"/>
-
-            <TextView
-                    android:text="Title"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/textView3" android:layout_alignParentStart="true" android:layout_marginStart="5dp"
-                    android:layout_alignTop="@+id/ivMovie" android:layout_marginTop="1dp"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Small" android:textStyle="bold"/>
+                    android:layout_marginTop="10dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="311dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="10dp"/>
 
             <TextView
                     android:id="@+id/textViewTitle"
                     android:hint="title"
                     android:ellipsize="end"
                     android:maxLines="1"
-                    android:layout_width="166dp"
-                    android:layout_height="wrap_content" android:layout_alignParentStart="true"
-                    android:layout_marginStart="5dp" android:layout_alignParentTop="true"
-                    android:layout_marginTop="29dp" android:layout_alignParentEnd="true"
-                    android:layout_marginEnd="221dp"/>
-            <TextView
-                    android:text="Release Date"
-                    android:layout_width="wrap_content"
+                    android:layout_width="286dp"
                     android:layout_height="wrap_content"
-                    android:id="@+id/textView4" android:layout_alignParentStart="true" android:layout_marginStart="6dp"
-                    android:layout_alignParentTop="true" android:layout_marginTop="71dp" android:textStyle="bold"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Small"/>
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="86dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="10dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="20dp"
+                    android:textStyle="bold"/>
+
             <TextView
                     android:id="@+id/textViewRelease_Date"
                     android:hint="release_date"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" android:layout_alignParentTop="true"
-                    android:layout_marginTop="96dp"
-                    android:layout_alignStart="@+id/textView4" android:layout_marginStart="2dp"/>
-            <TextView
-                    android:text="Vote Average"
-                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/textView" android:layout_alignParentTop="true" android:layout_marginTop="135dp"
-                    android:layout_alignStart="@+id/textView3"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Small" android:textStyle="bold"
-                    android:layout_marginStart="0dp"/>
+                    android:layout_marginStart="88dp"
+                    android:layout_alignBottom="@+id/ivMovie"
+                    android:layout_marginBottom="8dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginTop="6dp"
+                    android:layout_below="@+id/textViewTitle"
+                    android:textStyle="italic"/>
+
             <TextView
                     android:id="@+id/textViewVote_Average"
                     android:hint="vote average"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" android:layout_marginTop="159dp"
-                    android:layout_alignParentTop="true" android:layout_alignParentStart="true"
-                    android:layout_marginStart="4dp"/>
-            <TextView
-                    android:text="Adult Content ?"
-                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/textView5" android:layout_below="@+id/ivMovie"
-                    android:layout_marginTop="-57dp"
-                    android:layout_alignStart="@+id/textViewTitle" android:textStyle="bold"
-                    android:layout_marginStart="-1dp"/>
-            <TextView
-                    android:id="@+id/textViewAdult"
-                    android:hint="adult"
-                    android:layout_width="35dp"
-                    android:layout_height="28dp" android:layout_alignParentTop="true" android:layout_marginTop="227dp"
-                    android:layout_marginStart="5dp" android:layout_alignParentStart="true"/>
+                    android:layout_marginTop="7dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="127dp"
+                    android:layout_toEndOf="@+id/textViewRelease_Date"
+                    android:layout_marginStart="13dp"
+                    android:layout_below="@+id/textViewTitle"
+                    android:textColor="#FFEB3B"/>
 
         </RelativeLayout>
 

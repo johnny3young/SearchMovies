@@ -6,6 +6,8 @@ import android.util.Log.e
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.Animation
+import android.view.animation.AnimationUtils
 import com.squareup.picasso.Picasso
 import com.black3.app.projectretrofit03.Model.Movie
 import kotlinx.android.synthetic.main.item_movie.view.*
@@ -21,8 +23,7 @@ class AdapterMovie (val movies : MutableList<Movie>) : RecyclerView.Adapter <Ada
         return movies.size
     }
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        //Puedo declarar movie = movies[position] para reducir código y quedaría
-        //holder.votecount.text = movie.vote_count
+
         holder.vote_average.text = movies[position].vote_average.toString()
         holder.title.text = movies[position].title
         val fechaFormat  = SimpleDateFormat("yyyy-MM-dd")
@@ -31,13 +32,26 @@ class AdapterMovie (val movies : MutableList<Movie>) : RecyclerView.Adapter <Ada
         if (movies[position].adult.toString() == "false"){
             holder.adult.text = "No"
         }else{
-            holder.adult.text = "Si"
+            holder.adult.text = "Yes"
         }
 
         Picasso.get().load("https://image.tmdb.org/t/p/w500/${movies[position].poster_path}").into(holder.imageView)
 
+        holder.itemView.ivMovie.setOnClickListener{
+            val z = Intent(holder.itemView.context,ImagenActivity::class.java)
+            z.putExtra("posterpath",movies[position].poster_path)
+           holder.imageView.animate().scaleX(1.0f).scaleY(1.0f).duration = 2000
+            holder.itemView.context.startActivity(z)
+        }
+
+        //Efecto zoom al darle click a la imagen inicial
+        /*holder.itemView.ivMovie.setOnClickListener{
+            val zoomAnimation : Animation = AnimationUtils.loadAnimation(holder.itemView.context,R.anim.zoom)
+            holder.imageView.startAnimation(zoomAnimation)
+        }*/
+
         holder.itemView.setOnClickListener {
-            e("setOncLicListener","Validando el onBindViewHolder con Click")
+
             val z = Intent(holder.itemView.context,DetailActivity::class.java)
             z.putExtra("popularity",movies[position].popularity.toString() )
             z.putExtra("votecount",movies[position].vote_count.toString())

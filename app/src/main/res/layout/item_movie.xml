@@ -19,6 +19,7 @@
                 android:layout_height="match_parent">
 
             <ImageView
+                    android:foreground="?android:attr/selectableItemBackground"
                     android:layout_width="200dp"
                     android:layout_marginBottom="5dp"
                     android:layout_height="250dp"
@@ -32,7 +33,7 @@
                     android:layout_marginEnd="15dp"/>
 
             <TextView
-                    android:text="Titulo"
+                    android:text="Title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/textView3" android:layout_alignParentStart="true" android:layout_marginStart="5dp"
@@ -50,7 +51,7 @@
                     android:layout_marginTop="29dp" android:layout_alignParentEnd="true"
                     android:layout_marginEnd="221dp"/>
             <TextView
-                    android:text="Fecha de estreno"
+                    android:text="Release Date"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/textView4" android:layout_alignParentStart="true" android:layout_marginStart="6dp"
@@ -64,7 +65,7 @@
                     android:layout_marginTop="96dp"
                     android:layout_alignStart="@+id/textView4" android:layout_marginStart="2dp"/>
             <TextView
-                    android:text="Calificación Promedio"
+                    android:text="Vote Average"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/textView" android:layout_alignParentTop="true" android:layout_marginTop="135dp"
@@ -79,7 +80,7 @@
                     android:layout_alignParentTop="true" android:layout_alignParentStart="true"
                     android:layout_marginStart="4dp"/>
             <TextView
-                    android:text="Contenido adulto ?"
+                    android:text="Adult Content ?"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/textView5" android:layout_below="@+id/ivMovie"

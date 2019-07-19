@@ -32,19 +32,14 @@ class AdapterMovie (val movies : MutableList<Movie>) : RecyclerView.Adapter <Ada
 
         Picasso.get().load("https://image.tmdb.org/t/p/w500/${movies[position].poster_path}").transform(CircleTransformation()).into(holder.imageView)
 
+        //Show the poster in activity
         holder.itemView.ivMovie.setOnClickListener{
             val z = Intent(holder.itemView.context,ImagenActivity::class.java)
             z.putExtra("posterpath",movies[position].poster_path)
            holder.imageView.animate().scaleX(1.0f).scaleY(1.0f).duration = 2000
             holder.itemView.context.startActivity(z)
         }
-
-        //Efecto zoom al darle click a la imagen inicial
-        /*holder.itemView.ivMovie.setOnClickListener{
-            val zoomAnimation : Animation = AnimationUtils.loadAnimation(holder.itemView.context,R.anim.zoom)
-            holder.imageView.startAnimation(zoomAnimation)
-        }*/
-
+        //Show the details
         holder.itemView.setOnClickListener {
 
             val z = Intent(holder.itemView.context,DetailActivity::class.java)
@@ -55,7 +50,9 @@ class AdapterMovie (val movies : MutableList<Movie>) : RecyclerView.Adapter <Ada
             z.putExtra("title", movies[position].title)
             holder.itemView.context.startActivity(z)
         }
+
     }
+
     class ViewHolder (view : View) : RecyclerView.ViewHolder(view) {
         val vote_average = itemView.textViewVote_Average
         val title = itemView.textViewTitle

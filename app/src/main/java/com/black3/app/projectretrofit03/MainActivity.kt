@@ -3,7 +3,7 @@ import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
-import android.util.Log.e
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
@@ -14,13 +14,18 @@ import retrofit2.*
 import retrofit2.converter.gson.GsonConverterFactory
 
 class MainActivity : AppCompatActivity() {
-
+    var POPULAR = "popular"
+    var TOPRATED = "top_rated"
+    var UPCOMING = "upcoming"
     // val BASE_URL = "https://api.github.com/search/"
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
+        fillData(POPULAR)
+    }
 
+    fun fillData(orderBy : String){
         //Ejecutando Retrtofit
         val retrofit = Retrofit.Builder()
             .baseUrl("https://api.themoviedb.org/3/")
@@ -28,10 +33,9 @@ class MainActivity : AppCompatActivity() {
             .build()
         //Trayendo la data con Retrofit
         val api = retrofit.create(TheMovieDbApi::class.java)
-        api.getMoviesByPopularity().enqueue(object : Callback<MovieList> {
+        api.getMoviesBy(orderBy).enqueue(object : Callback<MovieList> {
             override fun onResponse(call: Call<MovieList>, response: Response<MovieList>) {
-                var moviesList = response.body()
-                var movies = moviesList?.movies!!
+                var movies = response.body()?.movies!!
 
                 //Ejecutar el Recyclerview
                 recyclerViewMovies.apply {
@@ -40,7 +44,7 @@ class MainActivity : AppCompatActivity() {
                 }
             }
             override fun onFailure(call: Call<MovieList>, t: Throwable) {
-                e("Johnny","Probando el onFailure")
+                Log.e("Johnny", "Probando el onFailure")
             }
         })
     }
@@ -56,20 +60,17 @@ class MainActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem) = when (item.itemId) {
         R.id.action_Popular -> {
             msgShow("Mostrando las más populares")
-            val myIntent = Intent (this,PopularActivity::class.java)
-            startActivity(myIntent)
+            fillData(POPULAR)
             true
         }
         R.id.action_Top_Rated -> {
             msgShow("Mostrando las más valoradas")
-            val myIntent = Intent (this,TopRatedActivity::class.java)
-            startActivity(myIntent)
+            fillData(TOPRATED)
             true
         }
         R.id.action_Upcoming -> {
             msgShow("Mostrando los próximos estrenos")
-            val myIntent = Intent (this,UpcomingActivity::class.java)
-            startActivity(myIntent)
+            fillData(UPCOMING)
             true
         }
         else -> {

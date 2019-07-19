@@ -4,6 +4,7 @@ import android.graphics.*
 import com.squareup.picasso.Transformation
 
 class CircleTransformation: Transformation {
+    
     companion object {
         private val KEY = "circleImageTransformation"
     }
@@ -17,14 +18,14 @@ class CircleTransformation: Transformation {
         // Init shader
         val shader = BitmapShader(source, Shader.TileMode.CLAMP, Shader.TileMode.CLAMP)
         val matrix = Matrix()
-        matrix.setTranslate((-dx).toFloat(), (-dy).toFloat())   // Move the target area to center of the source bitmap
+        matrix.setTranslate((-dx).toFloat(), (-dy).toFloat())   // Move the target area to center
         shader.setLocalMatrix(matrix)
 
         // Init paint
         val paint = Paint(Paint.ANTI_ALIAS_FLAG)
         paint.shader = shader
 
-        // Create and draw circle bitmap
+        // Create and draw circle
         val output = Bitmap.createBitmap(minEdge, minEdge, source.config)
         val canvas = Canvas(output)
         canvas.drawOval(RectF(0f, 0f, minEdge.toFloat(), minEdge.toFloat()), paint)

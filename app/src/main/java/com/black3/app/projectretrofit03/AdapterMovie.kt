@@ -5,13 +5,13 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.squareup.picasso.Picasso
 import com.black3.app.projectretrofit03.Model.Movie
+import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.item_movie.view.*
 import kotlinx.android.synthetic.main.item_movie.view.textViewTitle
 import java.text.SimpleDateFormat
 
-class AdapterMovie (val movies : MutableList<Movie>) : RecyclerView.Adapter <AdapterMovie.ViewHolder>() {
+class AdapterMovie(val movies: ArrayList<Movie>) : RecyclerView.Adapter <AdapterMovie.ViewHolder>() {
     
     val PATH_URL_IMAGE= "https://image.tmdb.org/t/p/w500/"
     

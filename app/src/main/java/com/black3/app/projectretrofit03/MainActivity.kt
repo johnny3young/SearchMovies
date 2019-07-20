@@ -16,18 +16,31 @@ import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), android.support.v7.widget.SearchView.OnQueryTextListener {
     
     val POPULAR = "popular"
     val TOPRATED = "top_rated"
     val UPCOMING = "upcoming"
     val BASEURL = "https://api.themoviedb.org/3/"
     
+    
+    override fun onQueryTextSubmit(orderByTitle: String): Boolean {
+        
+        return true
+    }
+    
+    override fun onQueryTextChange(p0: String?): Boolean {
+        
+        return true
+    }
+    
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
         fillData(POPULAR)
+        searchMovies.setOnQueryTextListener(this)
+        
     }
     
     fun fillData(orderBy: String) {
@@ -52,7 +65,7 @@ class MainActivity : AppCompatActivity() {
             }
             
             override fun onFailure(call: Call<MovieList>, t: Throwable) {
-                Log.e("Johnny", "Probando el onFailure")
+                Log.e("Message onFailure", "Inside method onFailure")
             }
         })
     }
@@ -92,4 +105,4 @@ class MainActivity : AppCompatActivity() {
     fun showMessage (msg: String) {
         Toast.makeText(this, msg, Toast.LENGTH_LONG).show()
     }
-}
+ }

@@ -2,6 +2,7 @@
 <android.support.constraint.ConstraintLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:orientation="vertical"
         android:padding="0dp"
@@ -20,8 +21,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginEnd="8dp"
             android:layout_marginTop="8dp"
-            app:layout_constraintTop_toBottomOf="@+id/textViewOverview"
-            app:layout_constraintVertical_bias="0.065"/>
+            app:layout_constraintTop_toBottomOf="@+id/textViewOverview"/>
 
     <TextView
             android:text="Overview"
@@ -58,10 +58,9 @@
             android:hint="vote_count"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintStart_toEndOf="@+id/textView"
-            android:layout_marginStart="20dp"
             android:layout_marginTop="8dp"
             app:layout_constraintTop_toBottomOf="@+id/textViewPopularity"
+            app:layout_constraintStart_toStartOf="@+id/textViewOverview"
             />
 
     <TextView
@@ -69,43 +68,43 @@
             android:hint="Title"
             android:inputType="textMultiLine"
             android:minLines="1"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            app:layout_constraintStart_toEndOf="@+id/textView3"
-            android:layout_marginStart="48dp"
             android:layout_marginTop="16dp"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginEnd="8dp"
-            app:layout_constraintHorizontal_bias="0.058"/>
+            app:layout_constraintStart_toStartOf="@+id/textViewPopularity"/>
 
     <TextView
             android:id="@+id/textViewPopularity"
             android:hint="popularity"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintStart_toEndOf="@+id/textView4"
-            android:layout_marginStart="28dp"
             android:layout_marginTop="8dp"
-            app:layout_constraintTop_toBottomOf="@+id/textViewTitle"/>
+            app:layout_constraintTop_toBottomOf="@+id/textViewTitle"
+            app:layout_constraintStart_toStartOf="@+id/textViewOverview"
+            />
 
     <TextView
             android:id="@+id/textViewOverview"
             android:hint="overview"
-            android:layout_width="276dp"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
             android:inputType="textMultiLine"
-            android:padding="5dp"
             android:minLines="3"
             android:textAlignment="inherit"
-            android:layout_marginTop="8dp"
-            app:layout_constraintTop_toBottomOf="@+id/textViewVote_count"
             android:layout_marginEnd="8dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/textView5"
-            android:layout_marginStart="8dp"
-            app:layout_constraintHorizontal_bias="0.617"/>
+            android:layout_marginStart="34dp"
+            app:layout_constraintHorizontal_bias="0.0"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/textViewVote_count"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toTopOf="@+id/ivMovieDetails"
+            app:layout_constraintVertical_bias="0.0"/>
 
     <TextView
             android:text="Vote Count"

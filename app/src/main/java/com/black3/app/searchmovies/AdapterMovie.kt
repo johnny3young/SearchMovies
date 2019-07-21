@@ -1,11 +1,11 @@
-package com.black3.app.projectretrofit03
+package com.black3.app.searchmovies
 
 import android.content.Intent
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.black3.app.projectretrofit03.Model.Movie
+import com.black3.app.searchmovies.Model.Movie
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.item_movie.view.*
 import kotlinx.android.synthetic.main.item_movie.view.textViewTitle

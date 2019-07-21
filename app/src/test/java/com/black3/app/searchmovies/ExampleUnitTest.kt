@@ -1,4 +1,4 @@
-package com.black3.app.projectretrofit03
+package com.black3.app.searchmovies
 
 import org.junit.Test
 

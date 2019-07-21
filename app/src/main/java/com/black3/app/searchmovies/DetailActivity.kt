@@ -1,4 +1,4 @@
-package com.black3.app.projectretrofit03
+package com.black3.app.searchmovies
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle

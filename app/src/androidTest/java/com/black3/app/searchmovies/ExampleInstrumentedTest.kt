@@ -1,4 +1,4 @@
-package com.black3.app.projectretrofit03
+package com.black3.app.searchmovies
 
 import android.support.test.InstrumentationRegistry
 import android.support.test.runner.AndroidJUnit4

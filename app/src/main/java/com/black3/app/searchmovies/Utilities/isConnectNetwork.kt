@@ -11,8 +11,9 @@ fun isConnectedNetwork(context: Context): Boolean {
     
     if (cm.activeNetworkInfo != null && cm.activeNetworkInfo.isConnected)
     {
-        Toast.makeText(context,"Estás conectado a la red",Toast.LENGTH_LONG).show()
-    }
+        if (cm.isDefaultNetworkActive)
+        Toast.makeText(context,"Estás conectado a Internet",Toast.LENGTH_LONG).show()
+    }else
     Toast.makeText(context,"No estás conectado a la red",Toast.LENGTH_LONG).show()
     return false
 }

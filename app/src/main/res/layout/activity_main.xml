@@ -10,33 +10,32 @@
 
     <android.support.design.widget.AppBarLayout
             android:id="@+id/appbarlayout"
-            android:theme="@style/Toolbar"
             android:layout_width="match_parent"
             android:layout_height="150dp"
             android:background="?colorPrimary"
-            android:fitsSystemWindows="true"
             android:elevation="4dp"
-            android:layout_marginTop="8dp"
+            android:fitsSystemWindows="true"
+            android:theme="@style/Toolbar"
             app:layout_constraintTop_toTopOf="parent">
 
         <android.support.design.widget.CollapsingToolbarLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:fitsSystemWindows="true"
                 app:contentScrim="?attr/colorPrimary"
-                app:layout_scrollFlags="scroll|exitUntilCollapsed"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                app:layout_scrollFlags="scroll|exitUntilCollapsed">
 
             <ImageView
-                    android:src="@drawable/portada_hollywood_1024x1024"
-                    android:scaleType="centerCrop"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"/>
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/portada_hollywood_1024x1024" />
 
             <android.support.v7.widget.Toolbar
                     android:id="@+id/toolbar"
-                    app:layout_collapseMode="pin"
                     android:layout_width="match_parent"
-                    android:layout_height="?attr/actionBarSize"/>
+                    android:layout_height="?attr/actionBarSize"
+                    app:layout_collapseMode="pin" />
         </android.support.design.widget.CollapsingToolbarLayout>
 
     </android.support.design.widget.AppBarLayout>
@@ -68,13 +67,14 @@
 
     <android.support.v7.widget.RecyclerView
             android:id="@+id/recyclerViewMovies"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:isScrollContainer="true"
-            tools:layout_editor_absoluteX="0dp"
             android:layout_marginTop="8dp"
+            android:isScrollContainer="true"
             app:layout_behavior="@string/appbar_scrolling_view_behavior"
-            app:layout_constraintTop_toBottomOf="@+id/searchMovies"/>
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/searchMovies" />
 
     <TextView
             android:text="Order by"

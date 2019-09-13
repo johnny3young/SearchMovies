@@ -9,6 +9,7 @@ import android.view.MenuItem
 import android.widget.Toast
 import com.black3.app.searchmovies.Interface.TheMovieDbApi
 import com.black3.app.searchmovies.Model.MovieList
+import com.black3.app.searchmovies.Utilities.isConnectedNetwork
 import kotlinx.android.synthetic.main.activity_main.*
 import retrofit2.Call
 import retrofit2.Callback
@@ -40,6 +41,7 @@ class MainActivity : AppCompatActivity(), android.support.v7.widget.SearchView.O
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
         fillData(POPULAR)
+        isConnectedNetwork(this)
         searchMovies.setOnQueryTextListener(this)
         
     }

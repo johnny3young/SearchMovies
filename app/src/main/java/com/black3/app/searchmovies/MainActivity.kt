@@ -41,8 +41,9 @@ class MainActivity : AppCompatActivity(), android.support.v7.widget.SearchView.O
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
         fillData(POPULAR)
-        isConnectedNetwork(this)
+        isConnectedNetwork(this, btnWifiOnOff)
         searchMovies.setOnQueryTextListener(this)
+        
         
     }
     

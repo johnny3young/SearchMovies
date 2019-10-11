@@ -9,6 +9,7 @@ import android.view.MenuItem
 import android.widget.Toast
 import com.black3.app.searchmovies.Interface.TheMovieDbApi
 import com.black3.app.searchmovies.Model.MovieList
+import com.black3.app.searchmovies.Utilities.isConnectedNetwork
 import kotlinx.android.synthetic.main.activity_main.*
 import retrofit2.Call
 import retrofit2.Callback
@@ -23,16 +24,13 @@ class MainActivity : AppCompatActivity(), android.support.v7.widget.SearchView.O
     val UPCOMING = "upcoming"
     val BASEURL = "https://api.themoviedb.org/3/"
     
-    
     override fun onQueryTextSubmit(orderByTitle: String): Boolean {
         searchTitle(orderByTitle)
-        
-        
         return true
     }
     
     override fun onQueryTextChange(textSearch: String?): Boolean {
-        if (textSearch == ""){
+        if (textSearch == "") {
             fillData(textViewSort.text.toString())
         }
         return true
@@ -43,7 +41,9 @@ class MainActivity : AppCompatActivity(), android.support.v7.widget.SearchView.O
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
         fillData(POPULAR)
+        isConnectedNetwork(this, btnWifiOnOff)
         searchMovies.setOnQueryTextListener(this)
+        
         
     }
     
@@ -74,7 +74,7 @@ class MainActivity : AppCompatActivity(), android.support.v7.widget.SearchView.O
         })
     }
     
-    fun searchTitle (orderBy: String) {
+    fun searchTitle(orderBy: String) {
         
         //Executing Retrtofit
         val retrofit = Retrofit.Builder()
@@ -100,6 +100,7 @@ class MainActivity : AppCompatActivity(), android.support.v7.widget.SearchView.O
             }
         })
     }
+    
     //This method is implemented to add elements to Toolbar
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         //Inflate menu items to use Toolbar
@@ -132,7 +133,7 @@ class MainActivity : AppCompatActivity(), android.support.v7.widget.SearchView.O
         }
     }
     
-    fun showMessage (msg: String) {
+    fun showMessage(msg: String) {
         Toast.makeText(this, msg, Toast.LENGTH_LONG).show()
     }
- }
+}

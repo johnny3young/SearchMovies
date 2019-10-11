@@ -4,4 +4,6 @@
     <color name="colorPrimaryDark">#101f27</color>
     <color name="colorAccent">#62717b</color>
     <color name="colorToolbarText">#FFFFFF</color>
+    <color name="colorRoundedButtonOn">#8BC34A</color>
+    <color name="colorRoundedButtonOff">#E70C0C</color>
 </resources>

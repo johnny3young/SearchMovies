@@ -29,6 +29,7 @@ class MainActivity : AppCompatActivity(), android.support.v7.widget.SearchView.O
     override fun onNetworkConnectionChanged(isConnected: Boolean) {
         if (isConnected){
             Toast.makeText(this, "Estás conectado a Internet", Toast.LENGTH_LONG).show()
+            btnWifiOnOff.text = "On"
             btnWifiOnOff.setBackgroundResource(R.drawable.rounded_button_on)
         }else{
             Toast.makeText(this, "No estás conectado a la red", Toast.LENGTH_LONG).show()
@@ -68,7 +69,12 @@ class MainActivity : AppCompatActivity(), android.support.v7.widget.SearchView.O
     }
     
     fun fillData(orderBy: String) {
-        textViewSort.text = orderBy
+        when(orderBy){
+            POPULAR -> textViewSort.text = "The most popular"
+            UPCOMING -> textViewSort.text = "Comming soon"
+            TOPRATED -> textViewSort.text = "The most voted"
+        }
+        //textViewSort.text = orderBy
         //Executing Retrtofit
         val retrofit = Retrofit.Builder()
             .baseUrl(BASEURL)

@@ -1,4 +1,4 @@
-package com.black3.app.searchmovies.Model
+package com.black3.app.searchmovies.model
 
 import com.google.gson.annotations.SerializedName
 

@@ -1,4 +1,4 @@
-package com.black3.app.searchmovies.Model
+package com.black3.app.searchmovies.model
 import java.util.*
 
 data class Movie (var vote_count : Int,

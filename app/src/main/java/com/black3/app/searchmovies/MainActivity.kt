@@ -1,15 +1,21 @@
 package com.black3.app.searchmovies
 
+import android.content.IntentFilter
+import android.net.ConnectivityManager
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
+import android.widget.Button
 import android.widget.Toast
-import com.black3.app.searchmovies.Interface.TheMovieDbApi
-import com.black3.app.searchmovies.Model.MovieList
-import com.black3.app.searchmovies.Utilities.isConnectedNetwork
+import com.black3.app.searchmovies.`interface`.TheMovieDbApi
+import com.black3.app.searchmovies.model.MovieList
+import com.black3.app.searchmovies.utilities.ConnectionReceiver
+import com.black3.app.searchmovies.utilities.MyApplication
+import com.black3.app.searchmovies.utilities.isConnectedNetwork
 import kotlinx.android.synthetic.main.activity_main.*
 import retrofit2.Call
 import retrofit2.Callback
@@ -17,7 +23,20 @@ import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-class MainActivity : AppCompatActivity(), android.support.v7.widget.SearchView.OnQueryTextListener {
+class MainActivity : AppCompatActivity(), android.support.v7.widget.SearchView.OnQueryTextListener, ConnectionReceiver.ConnectionReceiverListener {
+    
+    
+    override fun onNetworkConnectionChanged(isConnected: Boolean) {
+        if (isConnected){
+            Toast.makeText(this, "Estás conectado a Internet", Toast.LENGTH_LONG).show()
+            btnWifiOnOff.setBackgroundResource(R.drawable.rounded_button_on)
+        }else{
+            Toast.makeText(this, "No estás conectado a la red", Toast.LENGTH_LONG).show()
+            btnWifiOnOff.text = "Off"
+            btnWifiOnOff.setBackgroundResource(R.drawable.rounded_button_off)
+        }
+        
+    }
     
     val POPULAR = "popular"
     val TOPRATED = "top_rated"
@@ -41,9 +60,10 @@ class MainActivity : AppCompatActivity(), android.support.v7.widget.SearchView.O
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
         fillData(POPULAR)
-        isConnectedNetwork(this, btnWifiOnOff)
+        //isConnectedNetwork(this, btnWifiOnOff)
         searchMovies.setOnQueryTextListener(this)
-        
+        baseContext.registerReceiver(ConnectionReceiver(), IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION))
+        MyApplication.instance.setConnectionListener(this)
         
     }
     
@@ -136,4 +156,5 @@ class MainActivity : AppCompatActivity(), android.support.v7.widget.SearchView.O
     fun showMessage(msg: String) {
         Toast.makeText(this, msg, Toast.LENGTH_LONG).show()
     }
+    
 }

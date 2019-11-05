@@ -53,9 +53,13 @@ class MainActivity : AppCompatActivity(), android.support.v7.widget.SearchView.O
     }
     
     override fun onQueryTextChange(textSearch: String?): Boolean {
-        if (textSearch == "") {
-            fillData(textViewSort.text.toString())
-        }
+        if (textSearch == "" && textViewSort.text == "The most popular")
+            fillData(POPULAR)
+        if (textSearch == "" && textViewSort.text == "Comming soon")
+            fillData(UPCOMING)
+        if (textSearch == "" && textViewSort.text == "The most voted")
+            fillData(TOPRATED)
+        
         return true
     }
     
@@ -161,7 +165,7 @@ class MainActivity : AppCompatActivity(), android.support.v7.widget.SearchView.O
         R.id.about_us -> {
             
             //setup the alert builder
-            val alertMessage = AlertDialog.Builder(this,R.style.AlertDialogTheme)
+            val alertMessage = AlertDialog.Builder(this, R.style.AlertDialogTheme)
             alertMessage.setTitle("Information about App and Developer")
             alertMessage.setMessage(
                 """We are two brothers developers enthusiast and passionates for the technology,

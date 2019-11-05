@@ -2,6 +2,7 @@ package com.black3.app.searchmovies
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.item_movie_details.*
 
@@ -34,5 +35,6 @@ class DetailActivity : AppCompatActivity() {
         val title = bundle.get("title")
         textViewTitle.text = title.toString()
     }
+
 
 }

@@ -1,4 +1,4 @@
-package com.black3.app.searchmovies.`interface`
+package com.black3.app.searchmovies.api
 
 import com.black3.app.searchmovies.model.MovieList
 import retrofit2.Call

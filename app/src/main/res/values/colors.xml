@@ -6,4 +6,5 @@
     <color name="colorToolbarText">#FFFFFF</color>
     <color name="colorRoundedButtonOn">#8BC34A</color>
     <color name="colorRoundedButtonOff">#E70C0C</color>
+    <color name="dialogButtonText">#FFEB3B</color>
 </resources>

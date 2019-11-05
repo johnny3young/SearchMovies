@@ -12,4 +12,8 @@
         <item name="android:textColorPrimary">@color/colorToolbarText</item>
     </style>
 
+    <style name="AlertDialogTheme" parent="ThemeOverlay.AppCompat.Dialog.Alert">
+        <item name="colorAccent">@color/dialogButtonText</item>
+    </style>
+
 </resources>

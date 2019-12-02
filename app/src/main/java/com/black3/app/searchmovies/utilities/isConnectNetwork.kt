@@ -1,6 +1,7 @@
-package com.black3.app.searchmovies.utilities
+package com.black3.app.searchmovies.Utilities
 
 import android.content.Context
+import android.graphics.Color
 import android.net.ConnectivityManager
 import android.view.View
 import android.widget.Button

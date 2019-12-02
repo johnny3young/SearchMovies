@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/viewConstraint"
@@ -42,11 +41,11 @@
 
     <TextView
             android:id="@+id/textViewSort"
-            android:layout_width="163dp"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
+            android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
-            android:layout_marginEnd="32dp"
+            android:layout_marginEnd="16dp"
             android:text="TextView"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/textView6"
@@ -54,12 +53,16 @@
 
     <android.support.v7.widget.SearchView
             android:id="@+id/searchMovies"
-            android:layout_width="347dp"
+            android:background="@drawable/searchview_rounded"
+            android:queryBackground="@android:color/transparent"
+            android:layout_width="0dp"
             android:layout_height="24dp"
+            android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
-            android:elevation="4dp"
+            android:elevation="5dp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView6"
             app:queryHint="spiderman" />
 
@@ -76,12 +79,12 @@
 
     <TextView
             android:id="@+id/textView6"
-            android:layout_width="55dp"
+            android:layout_width="60dp"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
-            android:layout_marginStart="16dp"
+            android:layout_marginStart="104dp"
             android:layout_marginTop="8dp"
-            android:text="Order by"
+            android:text="Order by :"
             app:layout_constraintStart_toEndOf="@+id/btnWifiOnOff"
             app:layout_constraintTop_toBottomOf="@+id/appbarlayout" />
 

@@ -1,6 +1,6 @@
-package com.black3.app.searchmovies.Interface
+package com.black3.app.searchmovies.api
 
-import com.black3.app.searchmovies.Model.MovieList
+import com.black3.app.searchmovies.model.MovieList
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Path

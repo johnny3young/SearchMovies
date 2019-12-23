@@ -1,12 +1,13 @@
 package com.black3.app.searchmovies
 
 import android.content.IntentFilter
+import android.content.pm.PackageManager
 import android.net.ConnectivityManager
 import android.os.Bundle
 import android.os.Handler
+import android.support.v4.app.ActivityCompat
 import android.support.v7.app.AlertDialog
 import android.support.v7.app.AppCompatActivity
-import android.support.v7.widget.DialogTitle
 import android.support.v7.widget.LinearLayoutManager
 import android.util.Log
 import android.view.Menu
@@ -16,7 +17,6 @@ import com.black3.app.searchmovies.api.TheMovieDbApi
 import com.black3.app.searchmovies.model.MovieList
 import com.black3.app.searchmovies.utilities.ConnectionReceiver
 import com.black3.app.searchmovies.utilities.MyApplication
-import com.emmanuelkehinde.shutdown.Shutdown
 import kotlinx.android.synthetic.main.activity_main.*
 import org.jetbrains.anko.toast
 import retrofit2.Call
@@ -29,9 +29,14 @@ class MainActivity : AppCompatActivity(), android.support.v7.widget.SearchView.O
     ConnectionReceiver.ConnectionReceiverListener {
     
     
+    companion object {
+        
+        const val INTERNET_PERMISSION_REQUEST_CODE = 1
+    }
+    
+    
     override fun onNetworkConnectionChanged(isConnected: Boolean) {
         if (isConnected) {
-            Toast.makeText(this, "Estás conectado a Internet", Toast.LENGTH_LONG).show()
             btnWifiOnOff.text = "On"
             btnWifiOnOff.setBackgroundResource(R.drawable.rounded_button_on)
         } else {
@@ -39,7 +44,7 @@ class MainActivity : AppCompatActivity(), android.support.v7.widget.SearchView.O
             btnWifiOnOff.text = "Off"
             btnWifiOnOff.setBackgroundResource(R.drawable.rounded_button_off)
         }
-        
+    
     }
     
     val POPULAR = "popular"
@@ -217,4 +222,6 @@ class MainActivity : AppCompatActivity(), android.support.v7.widget.SearchView.O
         }, 2000)
         
     }
-}
+    
+        
+    }

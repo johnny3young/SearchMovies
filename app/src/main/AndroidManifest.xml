@@ -4,6 +4,8 @@
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+
 
     <application
             android:name=".utilities.MyApplication"
@@ -13,11 +15,13 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
-        <activity android:name="com.black3.app.searchmovies.ImageActivity">
-        </activity>
-        <activity android:name="com.black3.app.searchmovies.DetailActivity">
-        </activity>
-        <activity android:name="com.black3.app.searchmovies.MainActivity">
+        <activity android:name="com.black3.app.searchmovies.ImageActivity"/>
+
+        <activity android:name="com.black3.app.searchmovies.DetailActivity"/>
+
+        <activity android:name="com.black3.app.searchmovies.MainActivity"/>
+
+        <activity android:name="com.black3.app.searchmovies.IntroActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 

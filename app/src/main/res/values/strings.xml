@@ -1,5 +1,6 @@
 <resources>
-    <string name="app_name"></string>
+    <string name="app_name">Movies Info</string>
+    <string name="title_toolbar"> </string>
     <string name="action_settings">Settings</string>
     <string name="action_Popular">Most Popular</string>
     <string name="action_Top_Rated">Top Rated</string>
